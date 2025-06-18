@@ -16,7 +16,7 @@
 title: Beechmont Community Orchard
 email: hello@bcogrows.org
 description: Volunteer-run green space and food orchard in Louisville’s Southend.
-baseurl: ""
+baseurl: "/bcogrows"
 url: "https://bcogrows.org"
 markdown: kramdown
 theme: minima
