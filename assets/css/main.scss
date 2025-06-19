@@ -1,6 +1,10 @@
 ---
 ---
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   align-items: center;
   display: flex;
@@ -10,14 +14,58 @@ html {
 body {
   font-family: sans-serif;
   line-height: 1.6;
-  margin: 1rem;
+  padding: 1rem;
   max-width: 800px;
+  width: 100%;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0 0 1rem;
+
+  @media (min-width: 800px) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.hamburger {
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: 472px) {
+    display: none;
+  }
+}
+nav {
+  display: none;
+  margin-top: 1rem;
+  width: 100%;
+
+  &.open {
+    display: block;
+  }
+
+  @media (min-width: 472px) {
+    display: block;
+  }
 }
 nav ul {
+  display: flex;
   list-style: none;
+  margin: 0;
   padding: 0;
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 472px) {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 nav a {
   text-decoration: none;
@@ -34,6 +82,11 @@ header h1 {
   font-weight: 900;
   line-height: 1;
   margin: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
 }
 
 .button {
@@ -96,16 +149,18 @@ header h1 {
     background: white;
     left: 50%;
     margin-top: -100px;
-    padding: 1.25rem 3.5rem;
+    padding: 1.25rem 2.5rem;
     position: relative;
     transform: translateX(-50%);
-    width: 400px;
+    max-width: 530px;
+    width: 100%;
 
     h2 {
       display: block;
       font-size: 3em;
       font-weight: 900;
       letter-spacing: -1.5px;
+      margin: 0;
       text-align: center;
       width: 100%;
     }
