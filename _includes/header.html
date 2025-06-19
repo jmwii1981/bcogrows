@@ -1,13 +1,23 @@
 <header>
+  <h1>Beechmont Community Orchard</h1>
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/volunteering/">Volunteering</a></li>
-      <li><a href="/donors/">Donors</a></li>
-      <li><a href="/blog/">Blog</a></li>
       <li><a href="/about/">About</a></li>
-      <li><a href="/events/">Events</a></li>
+      <li><a href="/jump/">Jump In</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/support/">Support Us</a></li>
       <li><a href="/contact/">Contact</a></li>
     </ul>
   </nav>
 </header>
+<section class="hero">
+  <div class="image {{ page.title | slugify }}"></div>
+  <div class="content">
+    <h2>{{ page.hero_title }}</h2>
+    <p>{{ page.hero_text }}</p>
+    {% if page.link %}
+      <a class="button" href="{{ page.link.url }}">{{ page.link.text }}</a>
+    {% endif %}
+  </div>
+</section>

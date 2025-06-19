@@ -42,3 +42,5 @@ include:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+  - jekyll-paginate
+paginate: 5

@@ -2,26 +2,15 @@
 layout: page
 title: About
 permalink: /about/
+hero_title: Who We Are
+hero_text: We are neighbors, friends, and changemakers building something together.
+sections:
+  - id: origin
+    title: How We Started
+    content:
+      - The orchard began as a conversation about how to reclaim a parking lot—and grew into a hub for connection.
+  - id: mission
+    title: Our Mission
+    content:
+      - To foster sustainability, creativity, and joy in our neighborhood through shared work and shared harvests.
 ---
-
-# Who We Are  
-At Beechmont Community Orchard, we turn empty spaces into places where food and friendships grow. Located in the Beechmont Neighborhood of Louisville, Kentucky, we’re all about bringing people together to plant, cook, and share...
-
-## Beechmont Community Orchard Acknowledgement  
-We recognize the land upon which the orchard sits (now known as Kentucky) is primarily Shawnee, Cherokee, Osage, Seneca-Iroquois, Miami, Hopewell and Adena land...
-
----
-
-Let’s Begin  
-**Chip In**
-
-## Upcoming events  
-(Winter Something, Spring Social, Spring Pruning)
-
-**See All Events**
-
----
-
-**Beechmont Community Orchard**  
-4501–4509 South 3rd Street, Louisville, KY 40214  
-hello@bcogrows.org

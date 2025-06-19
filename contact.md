@@ -2,25 +2,9 @@
 layout: page
 title: Contact
 permalink: /contact/
+hero_title: Send us a "Howdy do!"
+hero_text: Got a question, want to lend a hand, or just feel like checkin’ in? We’d love to hear from you—drop us a line anytime.
+link:
+    href: /#
+    text: Holler at us
 ---
-
-# Contact Us  
-Want to get involved or have any questions? Just share a few details, and we'll be in touch soon. We're excited to connect with you!
-
-hello@bcogrows.org
-
----
-
-## Form  
-Name (required)  
-First Name  
-Last Name  
-Email (required)  
-Message (required)  
-**SEND**
-
----
-
-**Beechmont Community Orchard**  
-4501–4509 South 3rd Street, Louisville, KY 40214  
-hello@bcogrows.org

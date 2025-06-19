@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<main class="blog">
+  {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+  {% assign featured_post = sorted_posts.first %}
+  {% assign sidebar_posts = sorted_posts | slice: 1, sorted_posts.size %}
+
+  <article class="featured-post">
+    <h2>{{ featured_post.title }}</h2>
+    <p class="date">{{ featured_post.date | date: "%B %-d, %Y" }}</p>
+    <div>{{ featured_post.content }}</div>
+    <p class="author">— {{ featured_post.author }}</p>
+  </article>
+
+  <aside class="sidebar-posts">
+    <h2>More from the Orchard</h2>
+    <ul>
+      {% for post in sidebar_posts limit:15 %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+          <small>{{ post.date | date: "%B %-d, %Y" }} — {{ post.author }}</small>
+        </li>
+      {% endfor %}
+    </ul>
+  </aside>
+</main>
