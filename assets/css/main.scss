@@ -1,6 +1,7 @@
 ---
 ---
 
+//throughout
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -18,70 +19,14 @@ body {
   max-width: 800px;
   width: 100%;
 }
-header {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 0 0 1rem;
 
-  @media (min-width: 800px) {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-.hamburger {
+h2 {
   display: block;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  @media (min-width: 472px) {
-    display: none;
-  }
-}
-nav {
-  display: none;
-  margin-top: 1rem;
+  font-size: 2.4em;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  text-align: center;
   width: 100%;
-
-  &.open {
-    display: block;
-  }
-
-  @media (min-width: 472px) {
-    display: block;
-  }
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1rem;
-
-  @media (max-width: 472px) {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
-nav a {
-  text-decoration: none;
-  color: darkgreen;
-}
-footer {
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  color: gray;
-}
-
-header h1 {
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1;
-  margin: 0;
 }
 
 .image {
@@ -104,44 +49,102 @@ header h1 {
   text-transform: uppercase;
 }
 
+// header + nav
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0 0 1rem;
+
+  @media (min-width: 800px) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (min-width: 500px) {
+      display: none;
+    }
+  }
+
+  nav {
+  display: none;
+  margin-top: 1rem;
+  width: 100%;
+
+    &.open {
+      display: block;
+    }
+
+    @media (min-width: 500px) {
+      display: block;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+
+    @media (min-width: 500px) {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: darkgreen;
+  }
+}
+
+// hero 
 .hero {
   display: block;
   position: relative;
+  width: 100%;
 
   .image {
-    background: gray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 500px;
     width: 100%;
 
     &.home {
       background-image: url('/assets/images/img0.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     &.about {
       background-image: url('/assets/images/img1.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     &.jump-in {
       background-image: url('/assets/images/img2.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     &.blog {
       background-image: url('/assets/images/img3.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     &.about {
       background-image: url('/assets/images/img4.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
     }
     &.contact {
       background-image: url('/assets/images/img5.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
     }
   }
 
@@ -149,11 +152,16 @@ header h1 {
     background: white;
     left: 50%;
     margin-top: -100px;
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 0;
     position: relative;
     transform: translateX(-50%);
-    max-width: 530px;
+    
     width: 100%;
+
+  @media (min-width: 600px) {
+    max-width: 530px;
+    padding: 1.25rem 2.5rem;
+  }
 
     h2 {
       display: block;
@@ -170,11 +178,8 @@ header h1 {
   }
 }
 
-h2 {
-  display: block;
-  font-size: 2.4em;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  text-align: center;
-  width: 100%;
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: gray;
 }
