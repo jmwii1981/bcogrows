@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Suport Us
+title: Support Us
 permalink: /support/
-hero_title: Grow With Us
-hero_text: We’re powered by generosity.
+hero_title: Support That Grows
+hero_text: Your support provides the seeds, tools, and care that bring our orchard to life.
 sections:
   - id: our-impact
     title: Our Impact

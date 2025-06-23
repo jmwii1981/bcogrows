@@ -1,0 +1,48 @@
+{% for section in page.sections %}
+  <hr class="page-section-separator">
+{% if section.images %}
+  <section class="page-section wide">
+{% elsif section.image %}
+  <section class="page-section default">
+{% else %}
+  <section class="page-section small">
+{% endif %}
+
+  {% if section.title %}
+    <h2 id="{{ section.id }}">{{ section.title }}</h2>
+    {% endif %}
+
+    {% if section.content %}
+    <p>{{ section.content }}</p>
+    {% endif %}
+
+    {% if section.images %}
+    <ul class="image-grid">
+      {% for image in section.images %}
+      <li class="image-grid-item">
+        <img class="image" src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+      </li>
+      {% endfor %}
+    </ul>
+    {% elsif section.image %}
+      <img class="image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" loading="lazy">
+    {% endif %}
+    {% if section.button %}
+      <div class="button-wrapper">
+        <a class="button" href="{{ section.button.href }}">{{ section.button.text }}</a>
+      </div>
+    {% endif %}
+    {% if section.video %}
+      <div class="video-wrapper">
+        <video 
+          controls 
+          playsinline 
+          poster="{{ section.video.poster }}" 
+          aria-label="{{ section.video.alt }}">
+          <source src="{{ section.video.src }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    {% endif %}
+  </section>
+{% endfor %}

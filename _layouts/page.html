@@ -3,22 +3,8 @@ layout: page
 ---
 {% include head.html %}
 {% include header.html %}
-<main>
-  {% for section in page.sections %}
-  <section class="section">
-    {% if section.title %}
-    <h2 id="{{ section.id }}">{{ section.title }}</h2>
-    {% endif %}
-    {% if section.link %}
-    <img class="image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" loading="lazy">
-    {% endif %}
-    {% for paragraph in section.content %}
-    <p>{{ paragraph }}</p>
-    {% endfor %}
-    {% if section.link %}
-    <a class="button" href="{{ section.link.href }}">{{ section.link.text }}</a>
-    {% endif %}
-  </section>
-  {% endfor %}
-</main>
+<div class="page-sections">
+{% include hero.html %}
+{% include sections.html %}
+</div>
 {% include footer.html %}

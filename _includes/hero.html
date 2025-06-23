@@ -1,0 +1,12 @@
+<section class="hero">
+  <div class="image {{ page.title | slugify }}"></div>
+  <div class="content">
+    <h2>{{ page.hero_title }}</h2>
+    <p>{{ page.hero_text }}</p>
+    {% if page.hero_button %}
+    <div class="button-wrapper">
+      <a class="button" href="{{ page.hero_button.href }}">{{ page.hero_button.text }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
