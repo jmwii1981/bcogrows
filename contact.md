@@ -7,4 +7,10 @@ hero_text: Got a question, want to lend a hand, or just feel like checkin’ in?
 link:
     href: /#
     text: Holler at us
+
+sections:
+  - id: contact
+    title: "How to get ahold of us"
+    content:
+      - "You may contact us either by using a secure Google form (linked below) or by emailing us at [hello@bcogrows.org](mailto:hello@bcogrows.org)."
 ---

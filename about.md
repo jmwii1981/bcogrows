@@ -14,8 +14,7 @@ sections:
     title: "What We Do"
     content:
       - "We cultivate sustainability, creativity, and joy through shared work and shared harvests. From planting and pruning to community clean-up days, seasonal projects, and gathering the yield, every effort deepens the connection between neighbors and the land we care for together."
-    video:
-      src: "/assets/videos/1.mp4"
-      poster: "/assets/videos/poster.webp"
-      alt: "A look back at everything we've done together."
+    # Video uploaded to YouTube and link to be added later
+    youtube: "https://www.youtube.com/"
+    alt: "Funding that we need to cultivate our beautiful self-sustaining green space."
 ---

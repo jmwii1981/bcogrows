@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main class="events">
+  <h1>Upcoming Events</h1>
+  <ul>
+    {% assign sorted_events = site.events | sort: 'date' %}
+    {% for event in sorted_events %}
+      <li>
+        <h2><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h2>
+        <p><strong>{{ event.date | date: "%B %-d, %Y" }}</strong></p>
+        {% if event.location %}
+          <p>📍 {{ event.location }}</p>
+        {% endif %}
+        <p>{{ event.excerpt }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</main>

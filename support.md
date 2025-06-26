@@ -9,6 +9,9 @@ sections:
     title: Our Impact
     content:
       - Every dollar goes directly toward orchard tools, soil, plants, and community programming.
+    youtube: "https://www.youtube.com/embed/1OZ-MsLd_jE"
+    alt: "Funding that we need to cultivate our beautiful self-sustaining green space."
+
   - id: donate
     title: Donate
     content:
