@@ -7,6 +7,7 @@ hero_text: Your support provides the seeds, tools, and care that bring our orcha
 hero_button:
   href: #
   text: Donate
+  target_blank: true
 sections:
   - id: our-impact
     title: Our Impact
@@ -15,6 +16,7 @@ sections:
     button:
       href: #
       text: Help Us Grow
+      target_blank: true
     youtube: "https://www.youtube.com/embed/1OZ-MsLd_jE"
     alt: "Funding that we need to cultivate our beautiful self-sustaining green space."
 

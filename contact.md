@@ -7,4 +7,5 @@ hero_text: Got a question, want to lend a hand, or just feel like checkin’ in?
 hero_button:
   href: https://forms.gle/8x5LWC13sEhXippc8
   text: Holler at us
+  target_blank: true
 ---

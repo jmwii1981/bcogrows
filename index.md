@@ -39,4 +39,12 @@ sections:
     button:
       href: /blog
       text: Read more
+
+  - id: contact-us
+    title: Questions, comments, suggestions?
+    content: We’re always eager to hear from our community! Whether you have an idea to share, a question about the orchard, or just want to drop us a line–we’re all ears. Your input helps us grow stronger, together.
+    button:
+      href: https://forms.gle/8x5LWC13sEhXippc8
+      text: Holler at us
+      target_blank: true
 ---

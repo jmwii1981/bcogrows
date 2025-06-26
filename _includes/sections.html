@@ -12,11 +12,24 @@
     <h2 id="{{ section.id }}">{{ section.title }}</h2>
     {% endif %}
 
-  {% if section.content %}
-    {% for item in section.content %}
-      <p>{{ item | markdownify }}</p>
-    {% endfor %}
-  {% endif %}
+{% if section.id == "upcoming-opportunities" %}
+  {% assign events = site.events | sort: 'date' %}
+  {% for event in events %}
+    <div class="event-preview">
+      <h3><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h3>
+      <p><strong>{{ event.date | date: "%B %d, %Y" }}</strong></p>
+      {% if event.location %}
+        <p>{{ event.location }}</p>
+      {% endif %}
+      <p>{{ event.excerpt }}</p>
+    </div>
+  {% endfor %}
+{% elsif section.content %}
+  {% for item in section.content %}
+    <p>{{ item | markdownify }}</p>
+  {% endfor %}
+{% endif %}
+
 
     {% if section.images %}
     <ul class="image-grid">
@@ -44,7 +57,13 @@
     {% endif %}
     {% if section.button %}
       <div class="button-wrapper">
-        <a class="button" href="{{ section.button.href }}">{{ section.button.text }}</a>
+        <a
+          class="button"
+          href="{{ section.button.href }}"
+          {% if section.button.target_blank %}target="_blank" rel="noopener noreferrer"{% endif %}
+        >
+          {{ section.button.text }}
+        </a>
       </div>
     {% endif %}
   </section>
