@@ -16,8 +16,8 @@
   {% assign events = site.events | sort: 'date' %}
   {% for event in events %}
     <div class="event-preview">
-      <h3><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h3>
-      <p><strong>{{ event.date | date: "%B %d, %Y" }}</strong></p>
+      <h3>{{ event.title }}</h3>
+      <p><strong>Posted on {{ event.date | date: "%B %d, %Y" }}</strong></p>
       {% if event.location %}
         <p>{{ event.location }}</p>
       {% endif %}
