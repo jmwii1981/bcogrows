@@ -17,10 +17,6 @@
   {% for event in events %}
     <div class="event-preview">
       <h3>{{ event.title }}</h3>
-      <p><strong>Posted on {{ event.date | date: "%B %d, %Y" }}</strong></p>
-      {% if event.location %}
-        <p>{{ event.location }}</p>
-      {% endif %}
       <p>{{ event.excerpt }}</p>
     </div>
   {% endfor %}
