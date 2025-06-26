@@ -15,7 +15,6 @@ hero_text: We host regular volunteer days focused on hands-on work like planting
   <section id="upcoming">
     <h2>Upcoming Events</h2>
     <p>Check our calendar or follow us on Instagram for the latest.</p>
-
     <ul class="events-list">
       {% assign sorted_events = site.events | sort: 'date' %}
       {% for event in sorted_events %}

@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-
-<main class="events">
-  <h1>Upcoming Events</h1>
+{% include hero.html %}
+<section class="page-section wide"></section>
+<h2 id="{{ section.id }}">Upcoming Events</h2>
   <ul>
     {% assign sorted_events = site.events | sort: 'date' %}
     {% for event in sorted_events %}
@@ -17,4 +17,3 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-</main>

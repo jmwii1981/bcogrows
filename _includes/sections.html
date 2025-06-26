@@ -12,9 +12,11 @@
     <h2 id="{{ section.id }}">{{ section.title }}</h2>
     {% endif %}
 
-    {% if section.content %}
-    <p>{{ section.content }}</p>
-    {% endif %}
+  {% if section.content %}
+    {% for item in section.content %}
+      <p>{{ item | markdownify }}</p>
+    {% endfor %}
+  {% endif %}
 
     {% if section.images %}
     <ul class="image-grid">
@@ -26,11 +28,6 @@
     </ul>
     {% elsif section.image %}
       <img class="image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" loading="lazy">
-    {% endif %}
-    {% if section.button %}
-      <div class="button-wrapper">
-        <a class="button" href="{{ section.button.href }}">{{ section.button.text }}</a>
-      </div>
     {% endif %}
     {% if section.youtube %}
     <div class="video-wrapper">
@@ -44,6 +41,11 @@
         allowfullscreen>
       </iframe>
     </div>
+    {% endif %}
+    {% if section.button %}
+      <div class="button-wrapper">
+        <a class="button" href="{{ section.button.href }}">{{ section.button.text }}</a>
+      </div>
     {% endif %}
   </section>
 {% endfor %}

@@ -1,19 +1,19 @@
 ---
 layout: default
 ---
-
-<main class="blog">
+  {% include hero.html %}
   {% assign sorted_posts = paginator.posts %}
   {% assign featured_post = sorted_posts.first %}
   {% assign sidebar_posts = sorted_posts | slice: 1, sorted_posts.size %}
-
+<section class="page-section wide">
   <article class="featured-post">
-    <h2>{{ featured_post.title }}</h2>
+    <h2 id="{{ section.id }}">{{ featured_post.title }}</h2>
     <p class="date">{{ featured_post.date | date: "%B %-d, %Y" }}</p>
     <div>{{ featured_post.content }}</div>
     <p class="author">— {{ featured_post.author }}</p>
   </article>
-
+</section>
+<section class="page-section wide">
   <aside class="sidebar-posts">
     <h2>More from the Orchard</h2>
     <ul>
@@ -25,8 +25,9 @@ layout: default
       {% endfor %}
     </ul>
   </aside>
-
-  <nav class="pagination">
+</section>
+<section class="page-section wide">
+<nav class="pagination">
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer Posts</a>
     {% endif %}
@@ -34,4 +35,4 @@ layout: default
       <a href="{{ paginator.next_page_path | relative_url }}">Older Posts &rarr;</a>
     {% endif %}
   </nav>
-</main>
+</section>
