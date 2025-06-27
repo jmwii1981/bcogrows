@@ -22,7 +22,6 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
   display: block;
-  letter-spacing: -1.5px;
   text-align: center;
   width: 100%;
 }
@@ -49,7 +48,7 @@ h2 {
   display: inline-block;
   font-size: 0.85em;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   margin: 1rem auto 0;
   padding: 0.9rem 1.8rem;
   text-align: center;
@@ -305,5 +304,18 @@ footer {
 
   a {
     color: darkgreen;
+  }
+}
+
+.post {
+  &-separator {
+    border-top-color: darkgreen;
+    border-top-style: solid;
+    border-top-width: 1px;
+    height: 0;
+    margin: 4rem auto;
+    max-width: 250px;
+    opacity: 35%;
+    width: 50%;
   }
 }

@@ -3,7 +3,7 @@ layout: page
 title: Blog
 permalink: /blog/
 hero_title: BCO Grows
-hero_text: CCheck out the latest about what's going on at 'the Orchard.' Feeling inspired after reading through a few posts? Have some ideas? Reach out to us!
+hero_text: Check out the latest about what's going on at 'the Orchard.' Feeling inspired after reading through a few posts? Have some ideas? Reach out to us!
 hero_button:
   href: https://forms.gle/8x5LWC13sEhXippc8
   text: Holler at us
@@ -11,7 +11,7 @@ hero_button:
 sections:
   - id: blog-posts
     title: "Latest Posts"
-content:
+    content:
       - >
         {% for post in site.posts limit:5 %}
         ### [{{ post.title }}]({{ post.url }})

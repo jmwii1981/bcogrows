@@ -21,10 +21,11 @@
     </div>
   {% endfor %}
 {% elsif section.content %}
-  {% for item in section.content %}
-    <p>{{ item | markdownify }}</p>
-  {% endfor %}
-{% endif %}
+{% for item in section.content %}
+  {{ item | markdownify }}
+{% endfor %}
+
+  {% endif %}
 
 
     {% if section.images %}

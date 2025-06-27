@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+{% capture section_content %}
+  {% if page.featured_image %}
+    <div class="featured-image-wrapper">
+      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" class="featured-image">
+    </div>
+  {% endif %}
+
+  {{ content }}
+{% endcapture %}
+
+{% assign section_array = '' | split: '' %}
+{% assign section_array = section_array | push: section_content %}
+
+{% if page.sections %}
+  {% comment %} If sections already exist, use them as-is {% endcomment %}
+{% else %}
+  {% assign page.sections = '' | split: '' %}
+  {% assign page.sections = page.sections | push: 
+    '{"id":"post","title":"' | append: page.title | append: '","content":' | append: section_array | append: '}' %}
+{% endif %}
