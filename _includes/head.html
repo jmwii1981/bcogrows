@@ -1,12 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} | Beechmont Community Orchard</title>
-  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- Basic Meta -->
+  <meta name="description" content="BCO Grows is a vibrant community initiative cultivating fresh food, stronger neighborhoods, and sustainable growth in the BCO region." />
+  <meta name="author" content="BCO Grows" />
+  <meta name="keywords" content="BCO Grows, community gardens, urban farming, food access, sustainability, local produce, neighborhood empowerment" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Optional Favicon Theming -->
+  <meta name="apple-mobile-web-app-title" content="BCO Grows">
+  <meta name="application-name" content="BCO Grows">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="BCO Grows – Growing Together, Thriving Together" />
+<meta property="og:description" content="Join BCO Grows to transform vacant lots into flourishing gardens and empower our community through sustainable food and connection." />
+<meta property="og:image" content="{{ '/assets/images/img0.webp' | absolute_url }}" />
+<meta property="og:url" content="{{ '/' | absolute_url }}" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BCO Grows – Growing Together, Thriving Together" />
+<meta name="twitter:description" content="Sow seeds of change with BCO Grows: community gardens, education, and sustainability for all." />
+<meta name="twitter:image" content="{{ '/assets/images/img0.webp' | absolute_url }}" />
+
+
+  <!-- SEO Enhancements -->
+  <link rel="canonical" href="{{ '/' | absolute_url }}" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- JS/Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <main>

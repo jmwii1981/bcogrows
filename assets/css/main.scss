@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   padding: 1rem;
   max-width: 1200px;
@@ -97,6 +97,7 @@ header {
   }
 
   .hamburger {
+    color: darkgreen;
     display: block;
     font-size: 2rem;
     background: none;
