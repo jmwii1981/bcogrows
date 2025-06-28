@@ -1,16 +1,15 @@
----
-layout: page
----
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-<body>
-  <main>
-{% include header.html %}
-<div class="page-sections">
-{% include hero.html %}
-{% include sections.html %}
-</div>
-{% include footer.html %}
-</body>
+{% assign page_id = page.title | slugify %}
+  <body>
+    <main class="{{ page_id }}">
+      {% include header.html %}
+      <div class="page-sections {{ page.title | slugify }}">
+      {% include hero.html %}
+      {% include sections.html %}
+      </div>
+      {% include footer.html %}
+    </main>
+  </body>
 </html>

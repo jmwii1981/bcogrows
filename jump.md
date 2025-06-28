@@ -7,5 +7,7 @@ hero_text: We host regular volunteer days focused on hands-on work like planting
 sections:
   - id: upcoming-opportunities
     title: "Upcoming Opportunities"
-    content: []
+    container_wrapper_width: small
+    copy: []
 ---
+

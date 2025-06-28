@@ -1,5 +1,13 @@
 <section class="hero">
-  <div class="image {{ page.title | slugify }}"></div>
+  <div class="image-wrapper">
+    <img class="image"
+      src="/assets/images/hero/{{ page.title | slugify }}.webp"
+      alt=""
+      role="presentation"
+      aria-hidden="true"
+      loading="lazy"
+    >
+  </div>
   <div class="content">
     <h2>{{ page.hero_title | default: site.data.defaults.blog.hero_title }}</h2>
     <p>{{ page.hero_text | default: site.data.defaults.blog.hero_text }}</p>

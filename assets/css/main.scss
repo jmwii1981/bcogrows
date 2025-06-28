@@ -27,9 +27,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h2 {
-  font-size: 2.4em;
+  font-size: 1.75em;
   font-weight: 700;
   line-height: 1.2;
+
+  @media (min-width: 500px) {
+    font-size: 2.4em;
+  }
 }
 
 .image {
@@ -38,6 +42,7 @@ h2 {
 }
 
 .button-wrapper {
+  margin: 3rem auto 0;
   text-align: center;
 }
 
@@ -49,7 +54,7 @@ h2 {
   font-size: 0.85em;
   font-weight: 600;
   letter-spacing: 1px;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   padding: 0.9rem 1.8rem;
   text-align: center;
   text-decoration: none;
@@ -96,12 +101,12 @@ header {
   }
 
   .hamburger {
-    color: darkgreen;
-    display: block;
-    font-size: 2rem;
     background: none;
     border: none;
+    color: darkgreen;
     cursor: pointer;
+    display: block;
+    font-size: 2rem;
 
     @media (min-width: 500px) {
       display: none;
@@ -109,9 +114,9 @@ header {
   }
 
   nav {
-  display: none;
-  margin-top: 1rem;
-  width: 100%;
+    display: none;
+    margin-top: 1rem;
+    width: 100%;
 
     &.open {
       display: block;
@@ -147,6 +152,10 @@ header {
   flex-direction: column;
   gap: 6rem;
   margin: 0 auto;
+
+  @media (min-width: 500px) {
+    gap: 4.5rem;
+  }
 }
 
 // page hero 
@@ -155,30 +164,19 @@ header {
   position: relative;
   width: 100%;
 
-  .image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  .image-wrapper {
+    width: 100%;
     height: 500px;
+    overflow: hidden;
+    margin-bottom: 2rem;
     width: 100%;
 
-    &.home {
-      background-image: url('/assets/images/img0.webp');
-    }
-    &.about {
-      background-image: url('/assets/images/img1.webp');
-    }
-    &.jump-in {
-      background-image: url('/assets/images/img22.webp');
-    }
-    &.blog {
-      background-image: url('/assets/images/img8.webp');
-    }
-    &.support-us {
-      background-image: url('/assets/images/img4.webp');
-    }
-    &.contact {
-      background-image: url('/assets/images/img5.webp');
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
     }
   }
 
@@ -186,25 +184,29 @@ header {
     background: white;
     left: 50%;
     margin-top: -100px;
-    padding: 1.25rem 0;
+    padding: 1.25rem 0 0;
     position: relative;
     transform: translateX(-50%);
     
     width: 100%;
 
-  @media (min-width: 600px) {
+  @media (min-width: 500px) {
     max-width: 530px;
-    padding: 1.25rem 2.5rem;
+    padding: 4rem 4rem 0;
   }
 
     h2 {
       display: block;
-      font-size: 3em;
+      font-size: 2em;
       font-weight: 900;
       letter-spacing: -1.5px;
       margin: 0;
       text-align: center;
       width: 100%;
+
+      @media (min-width: 500px) {
+        font-size: 3em;
+      }
     }
     p {
       text-align: left;
@@ -215,6 +217,7 @@ header {
 // page sections
 .page-section {
   margin: 0 auto;
+  width: 100%;
 
   &.default {
     max-width: 720px;
@@ -237,45 +240,38 @@ header {
     width: 100%;
   }
 
-  .image-grid {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    gap: 1rem;
-    padding: 0;
-    margin: 0;
-
-    &-item {
-      flex: 0 0 48%; // 2 per row on mobile
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      flex: 0 0 calc(50% - 0.75rem);
-
-      .image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-    }
-
-    @media (min-width: 720px) {
-      &-item {
-        flex: 0 0 calc(25% - 0.75rem); // 4 per row on larger screens
-      }
-    }
-  }
-
-
   .video-wrapper {
-    aspect-ratio: 1 / 1;
     background: black;
     cursor: pointer;
+    margin: 0 auto;
     overflow: hidden;
     position: relative;
     width: 100%;
+
+    /* container width */
+    &.small {
+        @media (min-width: 500px) {
+          max-width: 500px;
+        }
+    }
+    &.default {
+        @media (min-width: 500px) {
+          max-width: 800px;
+        }
+    }
+    &.wide {
+        // @media (min-width: 500px) {
+        //   width: 100%; // already the style default
+        // }
+    }
+
+    /* video shape */
+    &.square {
+      aspect-ratio: 1 / 1;
+    }
+    &.rectangle {
+      aspect-ratio: 16 / 9;
+    }
 
     video {
       display: block;
@@ -307,6 +303,9 @@ footer {
   }
 }
 
+// placeholder styles
+
+/* entry breakup */ 
 .post {
   &-separator {
     border-top-color: darkgreen;
@@ -319,3 +318,179 @@ footer {
     width: 50%;
   }
 }
+
+/* Featured image inside blog layout */
+.featured-image-wrapper {
+  align-items: center;  
+  background: black;
+  display:flex;
+  height: 300px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+  }
+}
+
+/* Inline images inside post content */
+.post-image {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.blog-featured-wrapper {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+
+  .page-section-separator {
+    display: none;
+  }
+
+  .featured-post {
+    width: 100%;
+  }
+
+  .post-sidebar {
+    // border: 0;
+    // border-left: solid 4px darkgreen;
+    margin: 0 0 0 5rem;
+    padding: 0 0 0 1rem;
+    width: 350px;
+
+    h2 {
+      font-size: 1.25rem;
+      text-align: left;
+    }
+
+    .post-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 1rem;
+      }
+
+      .post-meta {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.copy-wrapper {
+  margin: 0 auto;
+  width: 100%;
+
+  /* container width */
+  &.small {
+      @media (min-width: 500px) {
+        max-width: 500px;
+      }
+  }
+  &.default {
+      @media (min-width: 500px) {
+        max-width: 800px;
+      }
+  }
+  &.wide {
+      // @media (min-width: 500px) {
+      //   width: 100%; // already the style default
+      // }
+  }
+}
+
+/* image grids throughout – responsive to amount of images */
+.image-grid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  /* container width */
+  &.small {
+      @media (min-width: 500px) {
+        max-width: 500px;
+      }
+  }
+  &.default {
+      @media (min-width: 500px) {
+        max-width: 800px;
+      }
+  }
+  &.wide {
+      // @media (min-width: 500px) {
+      //   width: 100%; // already the style default
+      // }
+  }
+
+  /* edge cases based on image amount */
+  &.one {
+
+  }
+  &.two {
+
+  }
+  &.three {
+
+  }
+
+  &-item {
+    flex: 0 0 48%; // 2 per row on mobile
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    flex: 0 0 calc(50% - 0.75rem);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  @media (min-width: 800px) {
+    &-item {
+      flex: 0 0 calc(25% - 0.75rem); // 4 per row on larger screens
+    }
+  }
+}
+
+
+/*
+<ul class="image-grid four wide">
+        
+          <li class="image-grid-item">
+            <img src="/assets/images/img17.webp" alt="TBD" loading="lazy">
+          </li>
+        
+          <li class="image-grid-item">
+            <img src="/assets/images/img19.webp" alt="TBD" loading="lazy">
+          </li>
+        
+          <li class="image-grid-item">
+            <img src="/assets/images/img20.webp" alt="TBD" loading="lazy">
+          </li>
+        
+          <li class="image-grid-item">
+            <img src="/assets/images/img12.webp" alt="TBD" loading="lazy">
+          </li>
+        
+      </ul>
+*/

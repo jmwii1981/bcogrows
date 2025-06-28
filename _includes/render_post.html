@@ -1,0 +1,12 @@
+{% assign full_post = site.posts | where: "url", include.url | first %}
+<article class="featured-post-full">
+  <h2>{{ full_post.title }}</h2>
+<p class="post-meta">Posted by {{ full_post.author }} on {{ full_post.date | date: "%B %d, %Y" }}</p>
+  {% if full_post.featured_image %}
+    <div class="featured-image-wrapper">
+      <img src="{{ full_post.featured_image | relative_url }}" alt="{{ full_post.title }}">
+    </div>
+  {% endif %}
+
+  {{ full_post.content }}
+</article>

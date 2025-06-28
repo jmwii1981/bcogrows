@@ -3,7 +3,8 @@ layout: page
 title: Blog
 permalink: /blog/
 hero_title: BCO Grows
-hero_text: Check out the latest about what's going on at 'the Orchard.' Feeling inspired after reading through a few posts? Have some ideas? Reach out to us!
+hero_text: Check out the latest about what's going on at 'the Orchard.'
+  Feeling inspired after reading through a few posts? Have some ideas? Reach out to us!
 hero_button:
   href: https://forms.gle/8x5LWC13sEhXippc8
   text: Holler at us

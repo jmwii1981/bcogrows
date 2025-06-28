@@ -1,0 +1,13 @@
+<article>
+    <h2>{{ page.title }}</h2>
+    <p class="post-meta">Posted by {{ page.author }} on {{ page.date | date: "%B %d, %Y" }}</p>
+
+    {% if page.featured_image %}
+        <div class="featured-image-wrapper">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+        </div>
+    {% endif %}
+
+    {{ content }}
+
+</article>

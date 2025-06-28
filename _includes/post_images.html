@@ -1,6 +1,7 @@
+{% assign data = include.meta | split: "||" %}
 <figure>
-  <img class="post-image" src="{{ include.src | relative_url }}" alt="{{ include.alt }}">
-  {% if include.caption %}
-    <figcaption>{{ include.caption }}</figcaption>
+  <img class="post-image" src="{{ data[0] | relative_url }}" alt="{{ data[1] }}">
+  {% if data[2] %}
+    <figcaption>{{ data[2] }}</figcaption>
   {% endif %}
 </figure>

@@ -14,16 +14,14 @@ This month, we were fortunate enough to harvest—and donate—a few special cro
 - *Basella rubra* (Malabar spinach)  
 - Serpent radish, also called “rat-tail” radish (*Raphanus sativus* var. *caudatus*)  
 
-    <ul class="image-grid">
-      <li class="image-grid-item">
-      {% include post_images.html src="/assets/images/posts/2025-06-24-orchard-update-img0.webp" alt="Basella rubra, sprouting." caption="Basella rubra, sprouting." %}
-      </li>
-      <li class="image-grid-item">
-      {% include post_images.html src="/assets/images/posts/2025-06-24-orchard-update-img1.webp" alt="Malabar spinach, thriving!" caption="Malabar spinach, thriving!" %}
-      </li>
-      <li class="image-grid-item">
-      </li>
-    </ul>
+<ul class="image-grid">
+  <li class="image-grid-item">
+    {% include post_images.html meta="/assets/images/posts/2025-06-24-orchard-update-img0.webp||Basella rubra, sprouting.||Basella rubra, sprouting." %}
+  </li>
+  <li class="image-grid-item">
+    {% include post_images.html meta="/assets/images/posts/2025-06-24-orchard-update-img1.webp||Malabar spinach, thriving!||Malabar spinach, thriving!" %}
+  </li>
+</ul>
 
 <hr class="post-separator">
 

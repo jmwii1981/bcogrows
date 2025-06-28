@@ -1,0 +1,33 @@
+{% assign featured = site.posts | sort: "date" | reverse | first %}
+<div class="page-sections">
+    {% include hero.html %}
+    <hr class="page-section-separator">
+    <div class="blog-featured-wrapper">
+        <section class="featured-post">
+            {% include render_post.html url=featured.url %}
+        </section>
+        <hr class="page-section-separator">
+        <aside class="post-sidebar">
+            <h2>More from the Orchard</h2>
+            <ul class="post-list">
+            {% assign older_posts = site.posts | where_exp: "post", "post.url != featured.url" | sort: "date" | reverse %}
+            {% assign paginated_posts = older_posts | slice: 0, 10 %}
+            {% for post in paginated_posts %}
+                <li>
+                <a href="{{ post.url }}">{{ post.title }}</a><br>
+                <span class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %d, %Y" }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+
+            <nav class="pagination">
+            {% if paginator.previous_page %}
+                <a class="prev" href="{{ paginator.previous_page_path }}">← Newer</a>
+            {% endif %}
+            {% if paginator.next_page %}
+                <a class="next" href="{{ paginator.next_page_path }}">Older →</a>
+            {% endif %}
+            </nav>
+        </aside>
+    </div>
+</div>

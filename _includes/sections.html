@@ -1,67 +1,96 @@
 {% for section in page.sections %}
-  <hr class="page-section-separator">
-{% if section.images %}
-  <section class="page-section wide">
-{% elsif section.image %}
-  <section class="page-section default">
-{% else %}
-  <section class="page-section small">
-{% endif %}
+  {% assign container_wrapper_width = section.container_wrapper_width | default: "default" %}
+  {% assign copy_wrapper_width = section.copy_wrapper_width | default: "default" %}
+  {% assign media_wrapper_width = section.media_wrapper_width | default: "default" %}
+  {% assign video_wrapper_shape = section.video_wrapper_shape | default: "rectangle" %}
 
-  {% if section.title %}
-    <h2 id="{{ section.id }}">{{ section.title }}</h2>
+     {% if page_id == "jump-in" %}
+      <hr class="page-section-separator">
+      <section class="page-section {{ container_wrapper_width }}">
+        {% assign events = site.events | sort: "date" | reverse %}
+        {% if events.size == 0 %}
+          <p>No upcoming events at the moment. Check back soon!</p>
+        {% else %}
+          {% for event in events %}
+            <div class="event">
+              <h3>{{ event.title | markdownify }}</h3>
+              <p>{{ event.content | markdownify }}</p>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </section>
+    {% elsif page_id == "blog" %}
+      <hr class="page-section-separator">
+      <section class="page-section {{ container_wrapper_width }}">
+        {% assign posts = site.posts | sort: "date" | reverse %}
+        {% if posts.size == 0 %}
+          <p>No posts yet — check back soon!</p>
+        {% else %}
+          {% for post in posts limit: 5 %}
+            <article class="blog-post-preview">
+              <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+              <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+              <p>{{ post.excerpt }}</p>
+            </article>
+          {% endfor %}
+        {% endif %}
+      </section> 
+    {% else %}
+      <hr class="page-section-separator">
+      <section class="page-section {{ container_wrapper_width }}">
+        <div class="copy-wrapper {{ copy_wrapper_width }}">
+          {% if section.title %}
+            <h2 class="width">{{ section.title }}</h2>
+          {% endif %}
+        </div>
+  
+        {% if section.copy %}
+          <div class="copy-wrapper {{ copy_wrapper_width }}">
+            {% for item in section.copy %}
+              {{ item | markdownify }}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if section.images %}
+          {% assign count = section.images | size %}
+          {% assign count_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten" | split: "," %}
+          {% assign count_word = count_words[count] %}
+          <ul class="image-grid {{ count_word }} {{ media_wrapper_width }}">
+            {% for image in section.images %}
+              <li class="image-grid-item">
+                <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if section.youtube %}
+          <div class="video-wrapper {{ media_wrapper_width }} {{ video_wrapper_shape }}">
+            <iframe
+              width="100%"
+              height="400"
+              src="{{ section.youtube }}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        {% endif %}
+
+        {% if section.button %}
+          <div class="button-wrapper">
+            <a
+              class="button"
+              href="{{ section.button.href }}"
+              {% if section.button.target_blank %}target="_blank" rel="noopener noreferrer"{% endif %}
+            >
+              {{ section.button.text }}
+            </a>
+          </div>
+        {% endif %}
+      </section>
     {% endif %}
 
-{% if section.id == "upcoming-opportunities" %}
-  {% assign events = site.events | sort: 'date' %}
-  {% for event in events %}
-    <div class="event-preview">
-      <h3>{{ event.title }}</h3>
-      <p>{{ event.excerpt }}</p>
-    </div>
-  {% endfor %}
-{% elsif section.content %}
-{% for item in section.content %}
-  {{ item | markdownify }}
-{% endfor %}
-
-  {% endif %}
-
-
-    {% if section.images %}
-    <ul class="image-grid">
-      {% for image in section.images %}
-      <li class="image-grid-item">
-        <img class="image" src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
-      </li>
-      {% endfor %}
-    </ul>
-    {% elsif section.image %}
-      <img class="image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" loading="lazy">
-    {% endif %}
-    {% if section.youtube %}
-    <div class="video-wrapper">
-      <iframe
-        width="100%"
-        height="400"
-        src="https://www.youtube.com/embed/1OZ-MsLd_jE"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    {% endif %}
-    {% if section.button %}
-      <div class="button-wrapper">
-        <a
-          class="button"
-          href="{{ section.button.href }}"
-          {% if section.button.target_blank %}target="_blank" rel="noopener noreferrer"{% endif %}
-        >
-          {{ section.button.text }}
-        </a>
-      </div>
-    {% endif %}
-  </section>
 {% endfor %}
