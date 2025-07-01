@@ -11,9 +11,13 @@
         {% if events.size == 0 %}
           <p>No upcoming events at the moment. Check back soon!</p>
         {% else %}
+          {% assign today_date = "now" | date: "%s" %}
           {% for event in events %}
-            <div class="event">
-              <h3>{{ event.title | markdownify }}</h3>
+            {% assign event_date = event.date | date: "%s" %}
+            {% assign is_archived = event_date < today_date %}
+            <div class="event{% if is_archived %} archived{% endif %}">
+              
+              <h3>{{ event.title | markdownify }}</h3>{% if is_archived %}<p class="highlight"><i>This event has passed.</i></p>{% endif %}
               <p>{{ event.content | markdownify }}</p>
             </div>
           {% endfor %}
