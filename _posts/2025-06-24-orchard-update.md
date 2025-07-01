@@ -1,8 +1,14 @@
 ---
 layout: post
+tags: 
+ - Orchard Updates
 title: "Orchard Update!"
 date: 2025-06-24
 author: Mya Rorer
+featured_image: 
+  src: /assets/images/posts/2025-06-27-harvests-and-recipes-img6.webp
+  alt: A hand holding tiny melons
+  caption: A hand holding tiny melons
 ---
 
 The Basella rubra we sowed has sprouted. This tropical vine *loves* the heat. It has thick leaves that can be used like spinach. In fact despite being NO relation, it's called Malabar spinach. I'm looking forward to seeing the red stems and dark green leaves climbing all over its trellis, and experimenting with ways to cook it. 

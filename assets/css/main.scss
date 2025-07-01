@@ -30,6 +30,7 @@ h2 {
   font-size: 1.75em;
   font-weight: 700;
   line-height: 1.2;
+  margin: 0 0 0.25rem 0;
 
   @media (min-width: 500px) {
     font-size: 2.4em;
@@ -68,19 +69,19 @@ a {
 // header + nav
 header {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  padding: 0 0 1rem;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0 40px 1rem 0;
+  position: relative;
 
-  @media (min-width: 800px) {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
+  @media (min-width: 512px) {
+    padding: 0 0 1rem 0;
   }
 
   .brand {
-    align-items: center;
-    display: flex;
+    align-items: flex-start;
+    display: inline-flex;
     gap: 0.5rem;
   }
 
@@ -92,23 +93,36 @@ header {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 900;
-    line-height: 1;
-    margin: 0;
+    line-height: 1.15;
+    margin: 0.15rem 0 0;
     text-align: left;
     width: auto;
+
+    @media (min-width: 445px) {
+      white-space: nowrap;
+    }
   }
 
   .hamburger {
-    background: none;
+    background: white;
     border: none;
     color: darkgreen;
     cursor: pointer;
     display: block;
     font-size: 2rem;
+    height: 37px;
+    line-height: 1;
+    margin:0;
+    padding:0;
+    padding-bottom: 15px;
+    position: absolute;
+      top: -5px;
+      right: 0;
+    width: 35px;
 
-    @media (min-width: 500px) {
+    @media (min-width: 512px) {
       display: none;
     }
   }
@@ -119,30 +133,40 @@ header {
     width: 100%;
 
     &.open {
-      display: block;
+      display: flex;
     }
 
-    @media (min-width: 500px) {
-      display: block;
+    @media (min-width: 512px) {
+      display: inline-flex;
+      margin: 0;
+      width: auto;
     }
   }
 
   ul {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    gap: 1rem;
 
-    @media (min-width: 500px) {
+
+    @media (min-width: 512px) {
+      display: inline-flex;
       flex-direction: row;
+      justify-items:flex-end;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
     }
   }
 
   a {
     text-decoration: none;
+    white-space: nowrap;
   }
 }
 
@@ -153,7 +177,7 @@ header {
   gap: 6rem;
   margin: 0 auto;
 
-  @media (min-width: 500px) {
+  @media (min-width: 512px) {
     gap: 4.5rem;
   }
 }
@@ -232,7 +256,7 @@ header {
   &-separator {
     border-top-color: darkgreen;
     border-top-style: solid;
-    border-top-width: 1px;
+    border-top-width: 2px;
     height: 0;
     margin: 0 auto;
     max-width: 530px;
@@ -243,7 +267,7 @@ header {
   .video-wrapper {
     background: black;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 3rem auto 0;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -284,22 +308,34 @@ header {
 
 // page footer
 footer {
-  color: gray;
-  font-size: 0.8rem;
-  margin-top: 14rem;
+  margin-top: 4rem;
 
   .footer-separator {
-    border-top-color: darkgreen;
+    border-top-color: rgba(darkgreen, 0.35);
     border-top-style: solid;
-    border-top-width: 1px;
+    border-top-width: 2px;
     height: 0;
-    margin: 0 auto 3rem;
-    opacity: 35%;
+    margin: 0 auto 1.5rem;
     width: 100%;
+  }
+
+  a, p {
+    font-size: 0.8rem;
   }
 
   a {
     color: darkgreen;
+  }
+
+  p {
+    color: gray;
+    margin: 0;
+  }
+
+  p:first-of-type {
+    color: inherit;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
@@ -310,7 +346,7 @@ footer {
   &-separator {
     border-top-color: darkgreen;
     border-top-style: solid;
-    border-top-width: 1px;
+    border-top-width: 2px;
     height: 0;
     margin: 4rem auto;
     max-width: 250px;
@@ -326,8 +362,9 @@ footer {
   display:flex;
   height: 300px;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin: 3rem auto 3rem;
   overflow: hidden;
+  position: relative;
   width: 100%;
 
   img {
@@ -336,6 +373,21 @@ footer {
     object-fit: cover;
     object-position: center center;
     width: 100%;
+  }
+
+  .caption {
+    background: rgba(white, 0.95);
+    border-radius: 2px;
+    color: gray;
+    font-size: 0.8rem;
+    font-style: italic;
+    height: auto;
+    line-height: 1;
+    padding: 0.5rem;
+    position: absolute;
+      bottom: 0.25rem;
+      left: 0.25rem;
+    width: auto;
   }
 }
 
@@ -362,11 +414,16 @@ footer {
   }
 
   .post-sidebar {
-    // border: 0;
-    // border-left: solid 4px darkgreen;
-    margin: 0 0 0 5rem;
-    padding: 0 0 0 1rem;
-    width: 350px;
+    //left
+    box-shadow: -19px 5px 26px -21px rgba(0,0,0,0.09),
+                 19px 5px 26px -21px rgba(0,0,0,0.09);
+    -webkit-box-shadow: -19px 5px 26px -21px rgba(0,0,0,0.09),
+                         19px 5px 26px -21px rgba(0,0,0,0.09);
+    -moz-box-shadow: -19px 5px 26px -21px rgba(0,0,0,0.09),
+                      19px 5px 26px -21px rgba(0,0,0,0.09);
+    margin: 0.15rem 0 0 5rem;
+    padding:1.5rem;
+    width: 375px;
 
     h2 {
       font-size: 1.25rem;
@@ -411,6 +468,51 @@ footer {
   }
 }
 
+.post {
+  h2 {
+    margin: 0 0 0.7rem 0;
+    text-align: left;
+  }
+
+  .post-meta {
+    font-size: 0.8rem;
+    line-height: 1.25;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .post-tags {
+    list-style: none;
+    line-height: 1.25;
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    li a {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* image grids throughout – responsive to amount of images */
 .image-grid {
   align-items: center;
@@ -419,42 +521,33 @@ footer {
   justify-content: center;
   list-style: none;
   gap: 1rem;
+  overflow: hidden;
   padding: 0;
-  margin: 0;
+  margin: 3rem auto 0;
   width: 100%;
 
   /* container width */
   &.small {
-      @media (min-width: 500px) {
-        max-width: 500px;
-      }
+    @media (min-width: 500px) {
+      max-width: 500px;
+    }
   }
+
   &.default {
-      @media (min-width: 500px) {
-        max-width: 800px;
-      }
+    @media (min-width: 500px) {
+      max-width: 800px;
+    }
   }
+
   &.wide {
-      // @media (min-width: 500px) {
-      //   width: 100%; // already the style default
-      // }
-  }
-
-  /* edge cases based on image amount */
-  &.one {
-
-  }
-  &.two {
-
-  }
-  &.three {
-
+    // width is already 100% by default
   }
 
   &-item {
-    flex: 0 0 48%; // 2 per row on mobile
+    flex: 0 0 48%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    position: relative;
     flex: 0 0 calc(50% - 0.75rem);
 
     img {
@@ -465,12 +558,40 @@ footer {
     }
   }
 
+    &.three {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      > .image-grid-item:first-child {
+        aspect-ratio: 1 / 2;
+        flex: 1 1 calc(25% - 1.5rem);
+      }
+
+      > .image-grid-stack {
+        display: flex;
+        flex: 1 1 calc(25% - 2rem);
+        flex-direction: column;
+        gap: 1rem;
+
+        .image-grid-item {
+          flex: 1 1 calc(50% - 2rem);
+          aspect-ratio: 1 / 1;
+        }
+      }
+    }
+
   @media (min-width: 800px) {
     &-item {
-      flex: 0 0 calc(25% - 0.75rem); // 4 per row on larger screens
+      flex: 0 0 calc(25% - 0.75rem); // default for 4-up grid
     }
   }
 }
+
+
+
+
+
 
 
 /*

@@ -52,18 +52,38 @@
           </div>
         {% endif %}
 
-        {% if section.images %}
-          {% assign count = section.images | size %}
-          {% assign count_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten" | split: "," %}
-          {% assign count_word = count_words[count] %}
-          <ul class="image-grid {{ count_word }} {{ media_wrapper_width }}">
-            {% for image in section.images %}
-              <li class="image-grid-item">
-                <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+{% if section.images %}
+  {% assign count = section.images | size %}
+  {% assign count_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten" | split: "," %}
+  {% assign count_word = count_words[count] %}
+
+  <div class="image-grid {{ count_word }} {{ media_wrapper_width }}">
+    {% if count == 3 %}
+      {% assign first = section.images[0] %}
+      {% assign second = section.images[1] %}
+      {% assign third = section.images[2] %}
+
+      <div class="image-grid-item">
+        <img src="{{ first.src }}" alt="{{ first.alt }}" loading="lazy">
+      </div>
+      <div class="image-grid-stack">
+        <div class="image-grid-item">
+          <img src="{{ second.src }}" alt="{{ second.alt }}" loading="lazy">
+        </div>
+        <div class="image-grid-item">
+          <img src="{{ third.src }}" alt="{{ third.alt }}" loading="lazy">
+        </div>
+      </div>
+    {% else %}
+      {% for image in section.images %}
+        <div class="image-grid-item">
+          <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}
+
 
         {% if section.youtube %}
           <div class="video-wrapper {{ media_wrapper_width }} {{ video_wrapper_shape }}">

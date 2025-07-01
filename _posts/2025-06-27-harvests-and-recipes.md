@@ -1,9 +1,14 @@
 ---
 layout: post
-title: "From Orchard to Fork: Summertime Kentucky Harvests & Recipes"
+tags: 
+ - From Orchard to Fork
+title: "Summertime Kentucky Harvests & Recipes"
 date: 2025-06-27
 author: Jan Michael Wallace
-featured_image: /assets/images/posts/2025-06-27-harvests-and-recipes-img6.webp
+featured_image: 
+  src: /assets/images/posts/2025-06-27-harvests-and-recipes-img6.webp
+  alt: A hand holding tiny melons
+  caption: A hand holding tiny melons
 ---
 
 June in Kentucky is when gardens really come alive. It’s a great time for harvesting, and if you’ve got your hands in the dirt, you know the satisfaction of pulling good food from the land. Across the state, folks are picking summer squash, cucumbers, bush beans, kale, chard, early tomatoes, sweet onions, and even the first new potatoes. But down at the Orchard, we’ve had our own little bounty to be thankful for.

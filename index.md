@@ -9,37 +9,41 @@ hero_button:
   text: Learn more
 sections:
   - id: volunteer
-    title: We love our volunteers! Their passion, generosity, and grit are proof that real change starts with people who choose to show up.
+    title: We love our volunteers
+    copy: Their passion, generosity, and grit are proof that real change starts with people who choose to show up.
     container_wrapper_width: wide
     media_wrapper_width: wide
     images:
-      - src: /assets/images/img17.webp
+      - src: /assets/images/site-wide/img17.webp
         alt: TBD
-      - src: /assets/images/img19.webp
+      - src: /assets/images/site-wide/img19.webp
         alt: TBD
-      - src: /assets/images/img20.webp
+      - src: /assets/images/site-wide/img20.webp
         alt: TBD
-      - src: /assets/images/img12.webp
+      - src: /assets/images/site-wide/img12.webp
         alt: TBD
     button:
       href: /jump
       text: Jump in
 
   - id: donors
-    title: Together, We Thrive. Our donors make it possible to sustain—and grow—a vibrant, shared community space.
-    container_wrapper_width: wide
-    media_wrapper_width: wide
+    title: Together, We Thrive
+    copy: Our donors and partners make it possible to sustain—and grow—a vibrant, shared space.
+    container_wrapper_width: small
+    media_wrapper_width: small
     images:
-      - src: /assets/images/img3.webp
+      - src: /assets/images/site-wide/img3.webp
         alt: TBD
-      - src: /assets/images/img7.webp
+      - src: /assets/images/site-wide/img7.webp
         alt: Betsy Ruhe, Beechmont Community Orchard Founder
+      - src: /assets/images/site-wide/img22.webp
+        alt: Louisville Grows Logo
     button:
       href: /support
       text: Join us
 
   - id: blog
-    title: Read the Latest from BCO Grows!
+    title: Read the Latest from the BCO Grows Blog
     container_wrapper_width: wide
     copy_wrapper_width: small
     media_wrapper_width: wide

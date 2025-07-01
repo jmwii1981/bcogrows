@@ -1,12 +1,37 @@
-<article>
+<article class="post">
     <h2>{{ page.title }}</h2>
+    {% assign tags_raw = page.tags %}
+
+    {% if tags_raw %}
+    {% if tags_raw contains "," %}
+        {% assign tags = tags_raw | split: "," %}
+    {% else %}
+        {% assign tags = tags_raw %}
+    {% endif %}
+
+    <ul class="post-tags">
+        {% for tag in tags %}
+        {% assign tag_clean = tag | strip %}
+        <li><a href="/tags/{{ tag_clean | slugify }}/">{{ tag_clean }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <p class="post-meta">Posted by {{ page.author }} on {{ page.date | date: "%B %d, %Y" }}</p>
 
-    {% if page.featured_image %}
-        <div class="featured-image-wrapper">
-        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
-        </div>
+    {% if page.featured_image and page.featured_image.src %}
+        <figure class="featured-image-wrapper">
+        <img class="image"
+            src="{{ page.featured_image.src | relative_url }}"
+            alt="{{ page.featured_image.alt | default: page.title }}"
+        >
+        {% if page.featured_image.caption %}
+            <figcaption class="caption">
+            {{ page.featured_image.caption }}
+            </figcaption>
+        {% endif %}
+        </figure>
     {% endif %}
+
 
     {{ content }}
 
