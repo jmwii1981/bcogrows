@@ -28,7 +28,7 @@ This month, we were fortunate enough to harvest—and donate—a few special cro
   </li>
 </ul>
 
-<hr class="post-separator">
+<hr class="half-width-separator">
 
 ### Taste Notes
 
@@ -38,13 +38,13 @@ This month, we were fortunate enough to harvest—and donate—a few special cro
 
 - **Snap Peas**: These are about as close to garden candy as you’ll get. Sweet, snappy, and full of fresh flavor. They’re just fine eaten raw, but hold up well in a light sauté too.
 
-<hr class="post-separator">
+<hr class="half-width-separator">
 
 ### Recipes From the Garden
 
 And, here are a few simple ways to make the most of these fresh-picked ingredients in your own gardens. They’re healthy, humble, and full of the kind of flavor that only comes from food grown close to home.
 
-<hr class="post-separator">
+<hr class="half-width-separator">
 
 **Garlicky Malabar Spinach with Lemon**
 
@@ -63,7 +63,7 @@ And, here are a few simple ways to make the most of these fresh-picked ingredien
 3. Add the spinach and stir it around till it just wilts, about 2–3 minutes.  
 4. Squeeze in your lemon, sprinkle a little salt, and serve warm.
 
-<hr class="post-separator">
+<hr class="half-width-separator">
 
 **Rat-Tail Radish Stir Fry**
 
@@ -83,7 +83,7 @@ And, here are a few simple ways to make the most of these fresh-picked ingredien
 3. Add the radish pods and cook another couple of minutes.  
 4. Finish with a splash of soy sauce or sorghum, and pepper flakes if you’re feeling bold.
 
-<hr class="post-separator">
+<hr class="half-width-separator">
 
 **Snap Pea Salad with Mint and Feta**
 
@@ -102,7 +102,7 @@ And, here are a few simple ways to make the most of these fresh-picked ingredien
 2. Drain, then toss with feta, mint, vinegar, and oil.  
 3. Season to taste and serve cold.
 
-<hr class="post-separator">
+<hr class="half-width-separator">
 
 There’s a kind of quiet joy in seeing a garden come to life, especially when the harvest can be shared with neighbors. We’re grateful for what the land gives, and even more so for the chance to give some of it away.
 

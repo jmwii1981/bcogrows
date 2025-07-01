@@ -64,6 +64,7 @@ h2 {
 
 a {
   color: darkgreen;
+  font-weight: 600;
 }
 
 // header + nav
@@ -185,7 +186,6 @@ header {
 // page hero 
 .hero {
   display: block;
-  position: relative;
   width: 100%;
 
   .image-wrapper {
@@ -206,15 +206,14 @@ header {
 
   .content {
     background: white;
-    left: 50%;
-    margin-top: -100px;
+    margin: 0 0 -100px;
     padding: 1.25rem 0 0;
     position: relative;
-    transform: translateX(-50%);
-    
+    top: -100px;
     width: 100%;
 
   @media (min-width: 500px) {
+    margin: 0 auto -100px;
     max-width: 530px;
     padding: 4rem 4rem 0;
   }
@@ -251,17 +250,6 @@ header {
   }
   &.wide {
     // inherited style width 100%;
-  }
-
-  &-separator {
-    border-top-color: darkgreen;
-    border-top-style: solid;
-    border-top-width: 2px;
-    height: 0;
-    margin: 0 auto;
-    max-width: 530px;
-    opacity: 35%;
-    width: 100%;
   }
 
   .video-wrapper {
@@ -306,21 +294,79 @@ header {
   }
 }
 
-// page footer
-footer {
-  margin-top: 4rem;
-
-  .footer-separator {
-    border-top-color: rgba(darkgreen, 0.35);
+.half-width-separator { // used in posts
+    border-top-color: darkgreen;
     border-top-style: solid;
     border-top-width: 2px;
     height: 0;
-    margin: 0 auto 1.5rem;
+    margin: 4rem auto;
+    max-width: 250px;
+    opacity: 35%;
+    width: 50%;
+  }
+
+.full-width-separator { // used on footer
+  border-top-color: rgba(darkgreen, 0.35);
+  border-top-style: solid;
+  border-top-width: 2px;
+  height: 0;
+  margin: 0 auto 1.5rem;
+  width: 100%;
+}
+
+.medium-width-separator { // used on page sections
+  border-top-color: darkgreen;
+  border-top-style: solid;
+  border-top-width: 2px;
+  height: 0;
+  margin: 0 auto;
+  max-width: 530px;
+  opacity: 35%;
+  width: 100%;
+}
+
+// page footer
+footer {
+  border: 0;
+  border-top: solid 2px rgba(darkgreen, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10rem;
+  gap: 3rem;
+  padding: 4rem 0 5rem 0;
+  width: 100%;
+
+  @media (min-width: 1125px) {
+    flex-direction: row;
+    gap: 5rem;
+  }
+  
+  .left-col {
     width: 100%;
+
+    @media (min-width: 400px) {
+      max-width: 360px;
+      min-width: 360px;
+      width: auto;
+    }
+  }
+
+  .right-col {
+    width: 100%;
+
+    @media (min-width: 400px) {
+      max-width: 750px;
+    }
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    text-align: left;
   }
 
   a, p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   a {
@@ -332,35 +378,41 @@ footer {
     margin: 0;
   }
 
-  p:first-of-type {
-    color: inherit;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-}
+  .local-links {
+    columns: 1;
+    column-gap: 2rem;
+    list-style: none;
+    padding: 0;
 
-// placeholder styles
+    @media (min-width: 600px) {
+      columns: 2;
+    }
 
-/* entry breakup */ 
-.post {
-  &-separator {
-    border-top-color: darkgreen;
-    border-top-style: solid;
-    border-top-width: 2px;
-    height: 0;
-    margin: 4rem auto;
-    max-width: 250px;
-    opacity: 35%;
-    width: 50%;
+    li {
+      break-inside: avoid;
+      margin-bottom: 0.15rem;
+
+      @media (min-width: 400px) {
+        margin: 0;
+      }
+    }
+
+    a {
+      display: inline-block;
+
+        @media (min-width: 400px) {
+          white-space: nowrap;
+        }
+    }
   }
 }
 
 /* Featured image inside blog layout */
 .featured-image-wrapper {
   align-items: center;  
+  aspect-ratio: 2/1;
   background: black;
-  display:flex;
-  height: 300px;
+  display: flex;
   justify-content: center;
   margin: 3rem auto 3rem;
   overflow: hidden;
@@ -403,10 +455,17 @@ footer {
 .blog-featured-wrapper {
   align-items: flex-start;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
-  .page-section-separator {
-    display: none;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  .medium-width-separator {
+    @media (min-width: 1024px) {
+      display: none;
+    }
   }
 
   .featured-post {
@@ -414,19 +473,22 @@ footer {
   }
 
   .post-sidebar {
-    //left
-    box-shadow: -19px 5px 26px -21px rgba(0,0,0,0.09),
-                 19px 5px 26px -21px rgba(0,0,0,0.09);
-    -webkit-box-shadow: -19px 5px 26px -21px rgba(0,0,0,0.09),
-                         19px 5px 26px -21px rgba(0,0,0,0.09);
-    -moz-box-shadow: -19px 5px 26px -21px rgba(0,0,0,0.09),
-                      19px 5px 26px -21px rgba(0,0,0,0.09);
-    margin: 0.15rem 0 0 5rem;
-    padding:1.5rem;
-    width: 375px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      box-shadow: -21px 0px 21px -27px rgba(0,0,0,0.25);
+      -webkit-box-shadow: -21px 0px 21px -27px rgba(0,0,0,0.25);
+      -moz-box-shadow: -21px 0px 21px -27px rgba(0,0,0,0.25);
+      flex-direction: row;
+      margin-left: clamp(3rem, 2vw, 5rem);
+      max-width: 275px;
+      padding: 0 0 4rem 1.5rem;
+    }
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.45rem;
+      margin-bottom: 1.5rem;
       text-align: left;
     }
 
@@ -438,10 +500,9 @@ footer {
       li {
         margin-bottom: 1rem;
       }
-
-      .post-meta {
+    }
+    .post-meta, p, p a {
         font-size: 0.8rem;
-      }
     }
   }
 }
@@ -588,7 +649,15 @@ footer {
   }
 }
 
+.jump-in.page-section .event {
+  border: 0;
+  border-bottom: solid 2px rgba(darkgreen, 0.35);
+  padding: 1rem 0;
 
+  &:last-of-type {
+    border: 0;
+  }
+}
 
 
 
@@ -615,3 +684,4 @@ footer {
         
       </ul>
 */
+

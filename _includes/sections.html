@@ -5,8 +5,8 @@
   {% assign video_wrapper_shape = section.video_wrapper_shape | default: "rectangle" %}
 
      {% if page_id == "jump-in" %}
-      <hr class="page-section-separator">
-      <section class="page-section {{ container_wrapper_width }}">
+      <hr class="medium-width-separator">
+      <section class="page-section jump-in {{ container_wrapper_width }}">
         {% assign events = site.events | sort: "date" | reverse %}
         {% if events.size == 0 %}
           <p>No upcoming events at the moment. Check back soon!</p>
@@ -20,7 +20,7 @@
         {% endif %}
       </section>
     {% elsif page_id == "blog" %}
-      <hr class="page-section-separator">
+      <hr class="medium-width-separator">
       <section class="page-section {{ container_wrapper_width }}">
         {% assign posts = site.posts | sort: "date" | reverse %}
         {% if posts.size == 0 %}
@@ -36,7 +36,7 @@
         {% endif %}
       </section> 
     {% else %}
-      <hr class="page-section-separator">
+      <hr class="medium-width-separator">
       <section class="page-section {{ container_wrapper_width }}">
         <div class="copy-wrapper {{ copy_wrapper_width }}">
           {% if section.title %}
@@ -52,37 +52,37 @@
           </div>
         {% endif %}
 
-{% if section.images %}
-  {% assign count = section.images | size %}
-  {% assign count_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten" | split: "," %}
-  {% assign count_word = count_words[count] %}
+  {% if section.images %}
+    {% assign count = section.images | size %}
+    {% assign count_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten" | split: "," %}
+    {% assign count_word = count_words[count] %}
 
-  <div class="image-grid {{ count_word }} {{ media_wrapper_width }}">
-    {% if count == 3 %}
-      {% assign first = section.images[0] %}
-      {% assign second = section.images[1] %}
-      {% assign third = section.images[2] %}
+    <div class="image-grid {{ count_word }} {{ media_wrapper_width }}">
+      {% if count == 3 %}
+        {% assign first = section.images[0] %}
+        {% assign second = section.images[1] %}
+        {% assign third = section.images[2] %}
 
-      <div class="image-grid-item">
-        <img src="{{ first.src }}" alt="{{ first.alt }}" loading="lazy">
-      </div>
-      <div class="image-grid-stack">
         <div class="image-grid-item">
-          <img src="{{ second.src }}" alt="{{ second.alt }}" loading="lazy">
+          <img src="{{ first.src }}" alt="{{ first.alt }}" loading="lazy">
         </div>
-        <div class="image-grid-item">
-          <img src="{{ third.src }}" alt="{{ third.alt }}" loading="lazy">
+        <div class="image-grid-stack">
+          <div class="image-grid-item">
+            <img src="{{ second.src }}" alt="{{ second.alt }}" loading="lazy">
+          </div>
+          <div class="image-grid-item">
+            <img src="{{ third.src }}" alt="{{ third.alt }}" loading="lazy">
+          </div>
         </div>
-      </div>
-    {% else %}
-      {% for image in section.images %}
-        <div class="image-grid-item">
-          <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
-        </div>
-      {% endfor %}
-    {% endif %}
-  </div>
-{% endif %}
+      {% else %}
+        {% for image in section.images %}
+          <div class="image-grid-item">
+            <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endif %}
 
 
         {% if section.youtube %}
