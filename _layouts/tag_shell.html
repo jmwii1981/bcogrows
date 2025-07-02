@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  {% assign page_id = page.title | slugify %}
+  <body>
+    {% include header.html %}
+    <main class="{{ page_id }}">
+      <div class="page-sections">
+        <section class="blog-post-list">
+            <h2>Read more from our Field Notes series<br><span><i>{{ page.title }}</i></span></h2>
+            {% include blog_list.html mode=page.mode tag=page.tag %}
+        </section>
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

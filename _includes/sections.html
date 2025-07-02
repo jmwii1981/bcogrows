@@ -11,18 +11,16 @@
         {% if events.size == 0 %}
           <p>No upcoming events at the moment. Check back soon!</p>
         {% else %}
-          {% assign today_date = "now" | date: "%s" %}
           {% for event in events %}
-            {% assign event_date = event.date | date: "%s" %}
-            {% assign is_archived = event_date < today_date %}
-            <div class="event{% if is_archived %} archived{% endif %}">
-              
-              <h3>{{ event.title | markdownify }}</h3>{% if is_archived %}<p class="highlight"><i>This event has passed.</i></p>{% endif %}
-              <p>{{ event.content | markdownify }}</p>
+            {% assign date_string = event.scheduled_for | default: event.date | date: "%Y-%m-%d" %}
+            <div class="event" data-event-date="{{ event.scheduled_for | default: event.date | date: '%Y-%m-%d' }}">
+              <h3>{{ event.title }}</h3>
+              {{ event.content | markdownify }}
             </div>
-          {% endfor %}
+            {% endfor %}
         {% endif %}
       </section>
+
     {% elsif page_id == "blog" %}
       <hr class="medium-width-separator">
       <section class="page-section {{ container_wrapper_width }}">

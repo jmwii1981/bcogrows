@@ -410,7 +410,7 @@ footer {
 /* Featured image inside blog layout */
 .featured-image-wrapper {
   align-items: center;  
-  aspect-ratio: 2/1;
+  aspect-ratio: 5/4;
   background: black;
   display: flex;
   justify-content: center;
@@ -418,6 +418,10 @@ footer {
   overflow: hidden;
   position: relative;
   width: 100%;
+
+  @media (min-width: 650px) {
+    aspect-ratio: 2/1;
+  }
 
   img {
     min-height: 100%;
@@ -483,7 +487,7 @@ footer {
       flex-direction: row;
       margin-left: clamp(3rem, 2vw, 5rem);
       max-width: 275px;
-      padding: 0 0 4rem 1.5rem;
+      padding: 0.65rem 0 4rem 1.5rem;
     }
 
     h2 {
@@ -557,21 +561,58 @@ footer {
   }
 }
 
+.jump-in.page-section .event {
+  border: 0;
+  border-bottom: solid 2px rgba(darkgreen, 0.35);
+  padding: 1rem 0;
+
+  &:last-of-type {
+    border: 0;
+  }
+
+  &.archived {
+    color: gray;
+    font-style: italic;
+  }
+
+  .highlight {
+    background-color: rgba(darkgreen, 0.075);
+    display: inline-block;
+  }
+}
 
 
+/* images not in grids throughout */
+.image-wrapper {
+  max-height: 400px;
+  max-width: 400px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
 
+  &, img {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+  .caption {
+    background: rgba(white, 0.95);
+    border-radius: 2px;
+    color: gray;
+    font-size: 0.8rem;
+    font-style: italic;
+    height: auto;
+    line-height: 1;
+    padding: 0.5rem;
+    position: absolute;
+      bottom: 0.25rem;
+      left: 0.25rem;
+    width: auto;
+  }
+}
 
 
 /* image grids throughout – responsive to amount of images */
@@ -586,6 +627,80 @@ footer {
   padding: 0;
   margin: 3rem auto 0;
   width: 100%;
+
+  .image-wrapper {
+    margin: 0;
+    width: 100%;
+  }
+
+  //defaults
+  &-item {
+    display: flex;
+    flex: 0 0 48%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+
+  // number of images in grid
+  &.two {
+    max-width: 600px;
+
+    .image-grid-item {
+      flex: 0 0 48%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      flex: 0 0 75%;
+    }
+
+    @media (min-width: 800px) {
+      .image-grid-item {
+        flex: 0 0 calc(50% - 0.5rem);
+      }
+    }
+  }
+
+  &.three {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    > .image-grid-item:first-child {
+      aspect-ratio: 1 / 2;
+      flex: 1 1 calc(25% - 1.5rem);
+    }
+
+    > .image-grid-stack {
+      display: flex;
+      flex: 1 1 calc(25% - 2rem);
+      flex-direction: column;
+      gap: 1rem;
+
+      .image-grid-item {
+        flex: 1 1 calc(50% - 2rem);
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+
+  &.four {
+
+    .image-grid-item {
+      flex: 0 0 48%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      flex: 0 0 calc(50% - 0.75rem);
+    }
+
+    @media (min-width: 800px) {
+      .image-grid-item {
+        flex: 0 0 calc(25% - 0.75rem); // default for 4-up grid
+      }
+    }
+  }
 
   /* container width */
   &.small {
@@ -603,94 +718,4 @@ footer {
   &.wide {
     // width is already 100% by default
   }
-
-  &-item {
-    flex: 0 0 48%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    position: relative;
-    flex: 0 0 calc(50% - 0.75rem);
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
-
-    &.three {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-
-      > .image-grid-item:first-child {
-        aspect-ratio: 1 / 2;
-        flex: 1 1 calc(25% - 1.5rem);
-      }
-
-      > .image-grid-stack {
-        display: flex;
-        flex: 1 1 calc(25% - 2rem);
-        flex-direction: column;
-        gap: 1rem;
-
-        .image-grid-item {
-          flex: 1 1 calc(50% - 2rem);
-          aspect-ratio: 1 / 1;
-        }
-      }
-    }
-
-  @media (min-width: 800px) {
-    &-item {
-      flex: 0 0 calc(25% - 0.75rem); // default for 4-up grid
-    }
-  }
 }
-
-.jump-in.page-section .event {
-  border: 0;
-  border-bottom: solid 2px rgba(darkgreen, 0.35);
-  padding: 1rem 0;
-
-  &:last-of-type {
-    border: 0;
-  }
-
-  &.archived {
-    color: gray;
-  }
-
-  .highlight {
-    background-color: rgba(darkgreen, 0.075);
-    display: inline-block;
-  }
-}
-
-
-
-
-
-/*
-<ul class="image-grid four wide">
-        
-          <li class="image-grid-item">
-            <img src="/assets/images/img17.webp" alt="TBD" loading="lazy">
-          </li>
-        
-          <li class="image-grid-item">
-            <img src="/assets/images/img19.webp" alt="TBD" loading="lazy">
-          </li>
-        
-          <li class="image-grid-item">
-            <img src="/assets/images/img20.webp" alt="TBD" loading="lazy">
-          </li>
-        
-          <li class="image-grid-item">
-            <img src="/assets/images/img12.webp" alt="TBD" loading="lazy">
-          </li>
-        
-      </ul>
-*/
-

@@ -1,7 +1,7 @@
 ---
 layout: post
 tags:
- - Orchard Updates
+ - The Cultivator’s Log
 title: "Some Exciting Pictures!"
 date: 2025-06-18
 author: Betsy Ruhe

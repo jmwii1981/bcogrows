@@ -6,7 +6,7 @@ title: "Summertime Kentucky Harvests & Recipes"
 date: 2025-06-27
 author: Jan Michael Wallace
 featured_image: 
-  src: /assets/images/posts/2025-06-27-harvests-and-recipes-img6.webp
+  src: /assets/images/posts/2025-06-27-harvests-and-recipes-img4.webp
   alt: A hand holding tiny melons
   caption: A hand holding tiny melons
 ---
@@ -19,14 +19,14 @@ This month, we were fortunate enough to harvest—and donate—a few special cro
 - *Basella rubra* (Malabar spinach)  
 - Serpent radish, also called “rat-tail” radish (*Raphanus sativus* var. *caudatus*)  
 
-<ul class="image-grid">
-  <li class="image-grid-item">
+<div class="image-grid two wide">
+  <div class="image-grid-item">
     {% include post_images.html meta="/assets/images/posts/2025-06-24-orchard-update-img0.webp||Basella rubra, sprouting.||Basella rubra, sprouting." %}
-  </li>
-  <li class="image-grid-item">
+  </div>
+  <div class="image-grid-item">
     {% include post_images.html meta="/assets/images/posts/2025-06-24-orchard-update-img1.webp||Malabar spinach, thriving!||Malabar spinach, thriving!" %}
-  </li>
-</ul>
+  </div>
+</div>
 
 <hr class="half-width-separator">
 
@@ -45,6 +45,8 @@ This month, we were fortunate enough to harvest—and donate—a few special cro
 And, here are a few simple ways to make the most of these fresh-picked ingredients in your own gardens. They’re healthy, humble, and full of the kind of flavor that only comes from food grown close to home.
 
 <hr class="half-width-separator">
+
+{% include post_images.html meta="/assets/images/posts/2025-06-27-harvests-and-recipes-img5.webp||A dish of Garlicky Malabar Spinach with Lemon||A dish of Garlicky Malabar Spinach with Lemon" %}
 
 **Garlicky Malabar Spinach with Lemon**
 
@@ -65,6 +67,9 @@ And, here are a few simple ways to make the most of these fresh-picked ingredien
 
 <hr class="half-width-separator">
 
+{% include post_images.html meta="/assets/images/posts/2025-06-27-harvests-and-recipes-img6.webp||A dish of Rat-Tail Radish Stir Fry||A dish of Rat-Tail Radish Stir Fry" %}
+
+
 **Rat-Tail Radish Stir Fry**
 
 *A colorful skillet dish with a little Southern spice—pairs well with rice or spooned over grits.*
@@ -84,6 +89,8 @@ And, here are a few simple ways to make the most of these fresh-picked ingredien
 4. Finish with a splash of soy sauce or sorghum, and pepper flakes if you’re feeling bold.
 
 <hr class="half-width-separator">
+
+{% include post_images.html meta="/assets/images/posts/2025-06-27-harvests-and-recipes-img7.webp||A dish of Snap Pea Salad with Mint and Feta||Snap Pea Salad with Mint and Feta" %}
 
 **Snap Pea Salad with Mint and Feta**
 

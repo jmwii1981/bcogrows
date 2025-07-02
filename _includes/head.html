@@ -29,7 +29,7 @@
   {% if page.featured_image %}
   <meta property="og:image" content="{{ page.featured_image | relative_url | absolute_url }}">
   {% else %}
-  <meta property="og:image" content="{{ '/assets/images/site-wide/img0.webp' | absolute_url }}" />
+  <meta property="og:image" content="{{ '/assets/images/hero/home.webp' | absolute_url }}" />
   {% endif %}
   <meta property="og:url" content="{{ '/' | absolute_url }}" />
   <meta property="og:type" content="website" />
@@ -42,7 +42,7 @@
   {% if page.featured_image %}
   <meta name="twitter:image" content="{{ page.featured_image | relative_url | absolute_url }}">
   {% else %}
-  <meta name="twitter:image" content="{{ '/assets/images/site-wide/img0.webp' | absolute_url }}" />
+  <meta name="twitter:image" content="{{ '/assets/images/hero/home.webp' | absolute_url }}" />
   {% endif %}
 
   <!-- SEO Enhancements -->
@@ -50,8 +50,8 @@
   <meta name="robots" content="index, follow" />
 
   <!-- JS/Styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+  <script type="module" src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 
   <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

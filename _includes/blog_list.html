@@ -1,0 +1,26 @@
+{% comment %} blog_list.html: dynamically renders post previews based on mode {% endcomment %}
+
+{% if include.mode == "featured" %}
+  {% assign post = site.posts | sort: "date" | reverse | first %}
+  {% include render_post.html url=post.url %}
+
+{% elsif include.mode == "all" %}
+  {% for post in paginator.posts %}
+    <article class="blog-post-preview">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+      <p>{{ post.excerpt }}</p>
+    </article>
+  {% endfor %}
+  {% include blog_pagination.html %}
+
+{% elsif include.mode == "tag" and include.tag %}
+  {% assign tagged_posts = site.posts | where_exp: "p", "p.tags contains include.tag" %}
+  {% for post in tagged_posts %}
+    <article class="blog-post-preview">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+      <p>{{ post.excerpt }}</p>
+    </article>
+  {% endfor %}
+{% endif %}

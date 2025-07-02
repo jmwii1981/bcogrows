@@ -18,8 +18,12 @@ include:
   - assets
 
 # Pagination only applies to this collection (your blog)
-paginate: 10
-paginate_path: "/blog/page:num"
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: /page/:num/
+  title: ':title (Page :num)'
+
 
 collections:
   blog:
