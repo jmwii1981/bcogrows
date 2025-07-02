@@ -619,10 +619,9 @@ footer {
 .image-grid {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  gap: 1rem;
+  gap: 0.75rem;
   overflow: hidden;
   padding: 0;
   margin: 3rem auto 0;
@@ -633,19 +632,18 @@ footer {
     width: 100%;
   }
 
-  //defaults
-  &-item {
-    display: flex;
-    flex: 0 0 48%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    position: relative;
-    flex: 0 0 calc(50% - 0.75rem);
-  }
-
   // number of images in grid
   &.two {
     max-width: 600px;
+
+    .image-grid-item {
+      display: flex;
+      flex: 0 0 48%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      flex: 0 0 calc(50% - 0.75rem);
+    }
 
     .image-grid-item {
       flex: 0 0 48%;
@@ -663,29 +661,54 @@ footer {
   }
 
   &.three {
+    align-items: stretch;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
 
     > .image-grid-item:first-child {
-      aspect-ratio: 1 / 2;
-      flex: 1 1 calc(25% - 1.5rem);
+      display: flex;
+      object-fit: cover;
+      object-position: center center;
+      width: 50%;
     }
 
     > .image-grid-stack {
       display: flex;
-      flex: 1 1 calc(25% - 2rem);
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.75rem;
+      width: 50%;
 
       .image-grid-item {
-        flex: 1 1 calc(50% - 2rem);
         aspect-ratio: 1 / 1;
+        width: 100%;
       }
     }
+
+    > .image-grid-item:first-child img,
+    > .image-grid-stack .image-grid-item,
+    > .image-grid-stack .image-grid-item img {
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+    }
+    > .image-grid-stack .image-grid-item,
+    > .image-grid-stack .image-grid-item img {
+      aspect-ratio: 1/1;
+      height:100%;
+    }
+
   }
 
   &.four {
+
+    .image-grid-item {
+      display: flex;
+      flex: 0 0 48%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      flex: 0 0 calc(50% - 0.75rem);
+    }
 
     .image-grid-item {
       flex: 0 0 48%;
@@ -693,6 +716,13 @@ footer {
       overflow: hidden;
       position: relative;
       flex: 0 0 calc(50% - 0.75rem);
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+      }
     }
 
     @media (min-width: 800px) {
@@ -717,5 +747,39 @@ footer {
 
   &.wide {
     // width is already 100% by default
+  }
+}
+
+
+
+
+.image-wrapper {
+  max-height: 400px;
+  max-width: 400px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+
+  &, img {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+  }
+
+  .caption {
+    background: rgba(white, 0.95);
+    border-radius: 2px;
+    color: gray;
+    font-size: 0.8rem;
+    font-style: italic;
+    height: auto;
+    line-height: 1;
+    padding: 0.5rem;
+    position: absolute;
+      bottom: 0.25rem;
+      left: 0.25rem;
+    width: auto;
   }
 }
