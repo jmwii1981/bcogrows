@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="canonical" href="/jump/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="refresh" content="0; url=/jump/">
-  <title>301 Moved Permanently</title>
+  <head>
+    <link rel="canonical" href="/jump/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=/jump/">
+    <title>301 Moved Permanently</title>
 
-  <!-- Basic Meta -->
-  <meta name="description" content="Beechmont Community Orchard is a vibrant community initiative cultivating fresh food, sustainable growth and a stronger Beechmont neighborhood." />
-  <meta name="author" content="Beechmont Community Orchard" />
-  <meta name="keywords" content="Beechmont Community Orchard, community gardens, urban farming, food access, sustainability, local produce, neighborhood empowerment" />
+    <!-- Basic Meta -->
+    <meta name="description" content="Beechmont Community Orchard is a vibrant community initiative cultivating fresh food, sustainable growth and a stronger Beechmont neighborhood." />
+    <meta name="author" content="Beechmont Community Orchard" />
+    <meta name="keywords" content="Beechmont Community Orchard, community gardens, urban farming, food access, sustainability, local produce, neighborhood empowerment" />
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Optional Favicon Theming -->
-  <meta name="apple-mobile-web-app-title" content="Beechmont Community Orchard">
-  <meta name="application-name" content="Beechmont Community Orchard">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
+    <!-- Optional Favicon Theming -->
+    <meta name="apple-mobile-web-app-title" content="Beechmont Community Orchard">
+    <meta name="application-name" content="Beechmont Community Orchard">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Beechmont Community Orchard – Growing Together, Thriving Together" />
-  <meta property="og:description" content="Join us at 'the Orchard' cultivate a flourishing green space and empower our community through sustainable food and connection." />
-  {% if page.featured_image %}
-  <meta property="og:image" content="{{ page.featured_image | relative_url | absolute_url }}">
-  {% else %}
-  <meta property="og:image" content="{{ '/assets/images/hero/home.webp' | absolute_url }}" />
-  {% endif %}
-  <meta property="og:url" content="{{ '/' | absolute_url }}" />
-  <meta property="og:type" content="website" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Beechmont Community Orchard – Growing Together, Thriving Together" />
+    <meta property="og:description" content="Join us at 'the Orchard' cultivate a flourishing green space and empower our community through sustainable food and connection." />
+    {% if page.featured_image %}
+    <meta property="og:image" content="{{ page.featured_image | relative_url | absolute_url }}">
+    {% else %}
+    <meta property="og:image" content="{{ '/assets/images/hero/home.webp' | absolute_url }}" />
+    {% endif %}
+    <meta property="og:url" content="{{ '/' | absolute_url }}" />
+    <meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Beechmont Community Orchard – Growing Together, Thriving Together" />
-  <meta name="twitter:description" content="Sow seeds of change with Beechmont Community Orchard: community gardens, education, and sustainability for all." />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Beechmont Community Orchard – Growing Together, Thriving Together" />
+    <meta name="twitter:description" content="Sow seeds of change with Beechmont Community Orchard: community gardens, education, and sustainability for all." />
 
-  {% if page.featured_image %}
-  <meta name="twitter:image" content="{{ page.featured_image | relative_url | absolute_url }}">
-  {% else %}
-  <meta name="twitter:image" content="{{ '/assets/images/hero/home.webp' | absolute_url }}" />
-  {% endif %}
+    {% if page.featured_image %}
+    <meta name="twitter:image" content="{{ page.featured_image | relative_url | absolute_url }}">
+    {% else %}
+    <meta name="twitter:image" content="{{ '/assets/images/hero/home.webp' | absolute_url }}" />
+    {% endif %}
 
-  <!-- SEO Enhancements -->
-  <link rel="canonical" href="{{ '/' | absolute_url }}" />
-  <meta name="robots" content="index, follow" />
+    <!-- SEO Enhancements -->
+    <link rel="canonical" href="{{ '/' | absolute_url }}" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- JS/Styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
-  <script type="module" src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
+    <!-- JS/Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+    <script type="module" src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 
-  <!-- Fonts & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
   <body>
     <main class="events">
       <header>
